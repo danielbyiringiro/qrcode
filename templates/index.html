@@ -13,9 +13,13 @@
     </form>
     {% if qr_code %}
     <div id="qrCodeContainer">
-        <img src="{{ url_for('static', filename='qr_code.png') }}" alt="QR Code">
+        <img src="{{ url_for('static', filename=filename) }}" alt="QR Code">
+        <a href="{{ url_for('static', filename=filename) }}" download>Download</a>
     </div>
     {% endif %}
+    <div id="qrCodeCounter">
+        <h2>QR Codes Generated: {{ qr_code_counter }}</h2>
+    </div>
     <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>
